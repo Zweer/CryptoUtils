@@ -1,0 +1,52 @@
+{
+  "name": "cryptoutils",
+  "version": "0.0.1",
+  "description": "A bunch of serverless cryptocurrency utilities (\"hosted\" on AWS)",
+  "main": "index.js",
+  "scripts": {
+    "sls": "serverless",
+    "deploy": "npm run deploy:lambda && npm run deploy:static",
+    "deploy:lambda": "serverless deploy",
+    "deploy:static": "serverless client deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zweer/CryptoUtils.git"
+  },
+  "keywords": [
+    "serverless",
+    "cryptocurrenty",
+    "bitcoin",
+    "blockchain",
+    "ethereum",
+    "aws",
+    "lambda"
+  ],
+  "author": "Niccolò Olivieri Achille <niccolo@olivieriachille.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zweer/CryptoUtils/issues"
+  },
+  "homepage": "https://github.com/Zweer/CryptoUtils#readme",
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "serverless": "^1.25.0",
+    "serverless-apig-s3": "https://github.com/Zweer/serverless-apig-s3.git",
+    "serverless-webpack": "^4.2.0",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  }
+}

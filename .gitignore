@@ -2,6 +2,7 @@
 ### Serverless
 .serverless
 .webpack
+static-dist
 
 
 ### Node template
