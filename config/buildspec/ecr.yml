@@ -1,13 +1,15 @@
-version: 0.1
+version: 0.2
+
+env:
+  variables:
+    IMAGE_REPO_NAME: CryptoUtils-BuildImage
+    IMAGE_TAG: latest
+    AWS_ACCOUNT_ID: $(echo \"$CODEBUILD_BUILD_ARN\" | cut -d : -f 5)
 
 phases:
   pre_build:
     commands:
       - echo Exporting Amazon variables
-      - echo CODEBUILD_BUILD_ARN $CODEBUILD_BUILD_ARN
-      - "export AWS_ACCOUNT_ID=$(echo \"$CODEBUILD_BUILD_ARN\" | cut -d : -f 5)"
-      - export IMAGE_REPO_NAME="CryptoUtils-BuildImage"
-      - export IMAGE_TAG="latest"
       - echo AWS_ACCOUNT_ID $AWS_ACCOUNT_ID
       - echo IMAGE_REPO_NAME $IMAGE_REPO_NAME
       - echo IMAGE_TAG $IMAGE_TAG
