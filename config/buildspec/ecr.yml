@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: CryptoUtils-BuildImage
+    IMAGE_REPO_NAME: cryptoutils-buildimage
     IMAGE_TAG: latest
 
 phases:
