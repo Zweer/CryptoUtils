@@ -7,10 +7,16 @@ phases:
       - "export AWS_ACCOUNT_ID=$(echo \"$CODEBUILD_BUILD_ARN\" | cut -d : -f 5)"
       - export IMAGE_REPO_NAME=CryptoUtils-BuildImage
       - export IMAGE_TAG=latest
+      - echo AWS_ACCOUNT_ID $AWS_ACCOUNT_ID
+      - echo IMAGE_REPO_NAME $IMAGE_REPO_NAME
+      - echo IMAGE_TAG $IMAGE_TAG
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
+      - echo AWS_ACCOUNT_ID $AWS_ACCOUNT_ID
+      - echo IMAGE_REPO_NAME $IMAGE_REPO_NAME
+      - echo IMAGE_TAG $IMAGE_TAG
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG ../..
