@@ -3,6 +3,10 @@ version: 0.1
 phases:
   pre_build:
     commands:
+      - echo Exporting Amazon variables
+      - "export AWS_ACCOUNT_ID=$(echo \"$CODEBUILD_BUILD_ARN\" | cut -d : -f 5)"
+      - export IMAGE_REPO_NAME=CryptoUtils-BuildImage
+      - export IMAGE_TAG=latest
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
